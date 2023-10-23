@@ -1,4 +1,4 @@
-# 🏙 Dracula
+# 🧛 Dracula
 
 A dark and light [Neovim](https://github.com/neovim/neovim) theme written in
 [Lua](https://www.lua.org) ported from the [Visual Studio Code
