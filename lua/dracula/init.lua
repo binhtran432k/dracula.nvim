@@ -15,7 +15,7 @@ function M._load(style)
   M.load({ style = style, use_background = style == nil })
 end
 
----@param opts Config|nil
+---@param opts DraculaConfig|nil
 function M.load(opts)
   if opts then
     require("dracula.config").extend(opts)

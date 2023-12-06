@@ -69,7 +69,7 @@ function M.highlight(group, hl)
   vim.api.nvim_set_hl(0, group, hl)
 end
 
----@param config Config
+---@param config DraculaConfig
 function M.autocmds(config)
   local group = vim.api.nvim_create_augroup("dracula", { clear = true })
 
@@ -122,7 +122,7 @@ function M.syntax(syntax)
   end
 end
 
----@param colors Pallete
+---@param colors PurePallete
 function M.terminal(colors)
   -- dark
   vim.g.terminal_color_0 = colors.black
@@ -152,7 +152,7 @@ function M.terminal(colors)
   vim.g.terminal_color_14 = colors.bright_cyan
 end
 
----@param colors Pallete
+---@param colors PurePallete
 function M.invert_colors(colors)
   if type(colors) == "string" then
     ---@diagnostic disable-next-line: return-type-mismatch

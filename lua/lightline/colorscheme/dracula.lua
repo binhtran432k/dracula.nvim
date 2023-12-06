@@ -4,7 +4,7 @@ local dracula = {}
 
 dracula.normal = {
 	left = { { colors.black, colors.purple }, { colors.purple, colors.selection } },
-	middle = { { colors.fg, colors.darker_bg } },
+	middle = { { colors.fg, colors.statusline } },
 	right = { { colors.black, colors.purple }, { colors.purple, colors.selection } },
 	error = { { colors.black, colors.red } },
 	warning = { { colors.black, colors.yellow } },
@@ -23,16 +23,16 @@ dracula.replace = {
 }
 
 dracula.inactive = {
-	left = { { colors.purple, colors.darker_bg }, { colors.darker_fg, colors.bg } },
-	middle = { { colors.selection, colors.darker_bg } },
-	right = { { colors.selection, colors.darker_bg }, { colors.darker_fg, colors.bg } },
+	left = { { colors.purple, colors.statusline }, { colors.statusline, colors.bg } },
+	middle = { { colors.selection, colors.statusline } },
+	right = { { colors.selection, colors.statusline }, { colors.statusline, colors.bg } },
 }
 
 dracula.tabline = {
-	left = { { colors.darker_fg, colors.light_bg }, { colors.darker_fg, colors.bg } },
-	middle = { { colors.selection, colors.darker_bg } },
-	right = { { colors.selection, colors.darker_bg }, { colors.darker_fg, colors.bg } },
-	tabsel = { { colors.purple, colors.selection }, { colors.darker_fg, colors.bg } },
+	left = { { colors.statusline, colors.gutter.bg }, { colors.statusline, colors.bg } },
+	middle = { { colors.selection, colors.statusline } },
+	right = { { colors.selection, colors.statusline }, { colors.statusline, colors.bg } },
+	tabsel = { { colors.purple, colors.selection }, { colors.statusline, colors.bg } },
 }
 
 return dracula
