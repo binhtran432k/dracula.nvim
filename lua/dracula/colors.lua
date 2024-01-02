@@ -141,7 +141,7 @@ function M.setup(opts)
   colors.warning = colors.yellow
   colors.info = colors.cyan
   colors.hint = colors.teal
-  colors.inactive = make_alpha(colors.white, "2A")
+  colors.inactive = make_alpha(colors.white, "4A")
   colors.line = make_alpha(colors.selection, "75")
   colors.border = make_alpha(colors.purple, 0.8)
   colors.visual = make_alpha(colors.purple, 0.4)
