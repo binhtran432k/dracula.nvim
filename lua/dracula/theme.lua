@@ -269,7 +269,7 @@ function M.setup()
     -- ["@comment.documentation"] = { },
     ["@operator"] = { fg = c.pink }, -- For any operator: `+`, but also `->` and `*` in C.
     ["@tag"] = { fg = c.cyan },
-    ["@tag.attribute"] = { fg = "@property" },
+    ["@tag.attribute"] = { link = "@property" },
     ["@tag.delimiter"] = { link = "Delimiter" },
 
     --- Punctuation
