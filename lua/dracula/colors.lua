@@ -31,6 +31,7 @@ local M = {}
 ---@field diff { add: string, delete: string, change: string, text: string }
 ---@field error string
 ---@field warning string
+---@field todo string
 ---@field info string
 ---@field hint string
 ---@field inactive string
@@ -141,6 +142,7 @@ function M.setup(opts)
   colors.warning = colors.yellow
   colors.info = colors.cyan
   colors.hint = colors.teal
+  colors.todo = colors.bright_cyan
   colors.inactive = make_alpha(colors.white, "4A")
   colors.line = make_alpha(colors.selection, "75")
   colors.border = make_alpha(colors.purple, 0.8)

@@ -218,46 +218,48 @@ function M.setup()
     ["@character"] = { link = "Character" },
     ["@character.special"] = { link = "SpecialChar" },
     ["@comment"] = { link = "Comment" },
-    ["@conditional"] = { link = "Conditional" },
+    ["@keyword.conditional"] = { link = "Conditional" },
     ["@constant"] = { link = "Constant" },
     ["@constant.builtin"] = { link = "Special" },
     ["@constant.macro"] = { link = "Define" },
-    ["@debug"] = { link = "Debug" },
-    ["@define"] = { link = "Define" },
-    ["@exception"] = { link = "Exception" },
-    ["@float"] = { link = "Float" },
+    ["@keyword.debug"] = { link = "Debug" },
+    ["@keyword.directive.define"] = { link = "Define" },
+    ["@keyword.exception"] = { link = "Exception" },
+    ["@number.float"] = { link = "Float" },
     ["@function"] = { link = "Function" },
     ["@function.builtin"] = { link = "Special" },
     ["@function.call"] = { link = "@function" },
     ["@function.macro"] = { link = "Macro" },
-    ["@include"] = { link = "Include" },
+    ["@keyword.include"] = { link = "Include" },
     ["@keyword.coroutine"] = { link = "@keyword" },
     ["@keyword.operator"] = { link = "@operator" },
     ["@keyword.return"] = { link = "@keyword" },
-    ["@method"] = { link = "Function" },
-    ["@method.call"] = { link = "@method" },
+    ["@function.method"] = { link = "Function" },
+    ["@function.method.call"] = { link = "@function.method" },
     ["@none"] = {},
     ["@number"] = { link = "Number" },
-    ["@preproc"] = { link = "PreProc" },
-    ["@repeat"] = { link = "Repeat" },
-    ["@storageclass"] = { link = "StorageClass" },
+    ["@keyword.directive"] = { link = "PreProc" },
+    ["@keyword.repeat"] = { link = "Repeat" },
+    ["@keyword.storage"] = { link = "StorageClass" },
     ["@string"] = { link = "String" },
-    ["@string.special"] = { link = "SpecialChar" },
-    ["@symbol"] = { link = "Identifier" },
-    ["@tag.delimiter"] = { link = "Delimiter" },
-    ["@text"] = { link = "@none" },
-    ["@text.emphasis"] = { italic = true },
-    ["@text.environment"] = { link = "Macro" },
-    ["@text.environment.name"] = { link = "Type" },
-    ["@text.literal"] = { link = "String" },
-    ["@text.math"] = { link = "Special" },
-    ["@text.note"] = { link = "SpecialComment" },
-    ["@text.strike"] = { strikethrough = true },
-    ["@text.strong"] = { bold = true },
-    ["@text.title"] = { link = "Title" },
-    ["@text.todo"] = { link = "Todo" },
-    ["@text.underline"] = { underline = true },
-    ["@text.uri"] = { link = "Underlined" },
+    ["@markup"] = { link = "@none" },
+    ["@markup.environment"] = { link = "Macro" },
+    ["@markup.environment.name"] = { link = "Type" },
+    ["@markup.raw"] = { link = "String" },
+    ["@markup.math"] = { link = "Special" },
+    ["@markup.strong"] = { bold = true },
+    ["@markup.emphasis"] = { italic = true },
+    ["@markup.strikethrough"] = { strikethrough = true },
+    ["@markup.underline"] = { underline = true },
+    ["@markup.heading"] = { link = "Title" },
+    ["@markup.link.label"] = { link = "SpecialChar" },
+    ["@markup.link.label.symbol"] = { link = "Identifier" },
+    ["@markup.link.url"] = { link = "Underlined" },
+    ["@comment.hint"] = { fg = c.hint },
+    ["@comment.error"] = { fg = c.error },
+    ["@comment.info"] = { fg = c.info },
+    ["@comment.warning"] = { fg = c.warning },
+    ["@comment.todo"] = { fg = c.todo },
     ["@type"] = { link = "Type" },
     ["@type.definition"] = { link = "Typedef" },
     ["@type.qualifier"] = { link = "@keyword" },
@@ -267,28 +269,27 @@ function M.setup()
     -- ["@comment.documentation"] = { },
     ["@operator"] = { fg = c.pink }, -- For any operator: `+`, but also `->` and `*` in C.
     ["@tag"] = { fg = c.cyan },
-    ["@tag.attribute"] = { fg = c.green },
+    ["@tag.attribute"] = { fg = "@property" },
+    ["@tag.delimiter"] = { link = "Delimiter" },
 
     --- Punctuation
     ["@punctuation.delimiter"] = { fg = c.fg }, -- For delimiters ie: `.`
     ["@punctuation.bracket"] = { fg = c.dark.fg }, -- For brackets and parens.
-    ["@punctuation.special"] = { fg = c.cyan }, -- For special punctutation that does not fall in the catagories before.
-    ["@punctuation.special.markdown"] = { fg = c.purple, bold = true },
+    ["@markup.list"] = { fg = c.cyan }, -- For special punctutation that does not fall in the catagories before.
+    ["@markup.list.markdown"] = { fg = c.purple, bold = true },
 
     --- Literals
     ["@string.documentation"] = { fg = c.yellow },
-    ["@string.regex"] = { fg = c.red }, -- For regexes.
+    ["@string.regexp"] = { fg = c.red }, -- For regexes.
     ["@string.escape"] = { fg = c.cyan }, -- For escape characters within a string.
 
     --- Functions
     ["@constructor"] = { fg = c.cyan }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    ["@parameter"] = { fg = c.orange }, -- For parameters of a function.
-    ["@parameter.builtin"] = { fg = util.blend(c.orange, c.fg, 0.8) }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
+    ["@variable.parameter"] = { fg = c.orange }, -- For parameters of a function.
+    ["@variable.parameter.builtin"] = { fg = util.blend(c.orange, c.fg, 0.8) }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
 
     --- Keywords
     ["@keyword"] = { fg = c.pink, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
-    -- TODO:
-    -- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
     ["@keyword.function"] = { fg = c.cyan, style = options.styles.functions }, -- For keywords used to define a fuction.
     ["@keyword.function.ruby"] = { fg = c.pink, style = options.styles.functions }, -- For keywords used to define a fuction.
 
@@ -296,28 +297,27 @@ function M.setup()
 
     --- Types
     ["@type.builtin"] = { fg = c.cyan, italic = true },
-    ["@field"] = { fg = c.bright_green }, -- For fields.
+    ["@variable.member"] = { fg = c.bright_green }, -- For fields.
     ["@property"] = { fg = c.bright_green },
 
     --- Identifiers
     ["@variable"] = { fg = c.fg, style = options.styles.variables }, -- Any variable name that does not have another highlight.
     ["@variable.builtin"] = { fg = c.purple, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-    ["@namespace.builtin"] = { fg = c.orange, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
+    ["@module.builtin"] = { fg = c.orange, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     --- Text
-    -- ["@text.literal.markdown"] = { fg = c.purple },
-    ["@text.literal.markdown_inline"] = { bg = c.black, fg = c.purple },
-    ["@text.reference"] = { fg = c.orange, bold = true },
+    -- ["@markup.raw.markdown"] = { fg = c.purple },
+    ["@markup.raw.markdown_inline"] = { bg = c.black, fg = c.purple },
+    ["@markup.link"] = { fg = c.orange, bold = true },
 
-    ["@text.todo.unchecked"] = { fg = c.cyan }, -- For brackets and parens.
-    ["@text.todo.checked"] = { fg = c.green }, -- For brackets and parens.
-    ["@text.warning"] = { fg = c.bg, bg = c.warning },
-    ["@text.danger"] = { fg = c.bg, bg = c.error },
+    ["@markup.list.unchecked"] = { fg = c.cyan }, -- For brackets and parens.
+    ["@markup.list.checked"] = { fg = c.green }, -- For brackets and parens.
 
-    ["@text.diff.add"] = { link = "DiffAdd" },
-    ["@text.diff.delete"] = { link = "DiffDelete" },
+    ["@diff.plus"] = { link = "DiffAdd" },
+    ["@diff.minus"] = { link = "DiffDelete" },
+    ["@diff.delta"] = { link = "DiffChange" },
 
-    ["@namespace"] = { link = "Include" },
+    ["@module"] = { link = "Include" },
 
     -- tsx
     ["@tag.tsx"] = { fg = c.red },
@@ -333,15 +333,15 @@ function M.setup()
     ["@lsp.type.enum"] = { link = "@type" },
     ["@lsp.type.enumMember"] = { link = "@constant" },
     ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
-    ["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
+    ["@lsp.type.formatSpecifier"] = { link = "@markup.list" },
     ["@lsp.type.generic"] = { link = "@variable" },
     ["@lsp.type.interface"] = { fg = make_alpha(c.cyan, 0.7) },
     ["@lsp.type.keyword"] = { link = "@keyword" },
-    ["@lsp.type.lifetime"] = { link = "@storageclass" },
-    ["@lsp.type.namespace"] = { link = "@namespace" },
+    ["@lsp.type.lifetime"] = { link = "@keyword.storage" },
+    ["@lsp.type.namespace"] = { link = "@module" },
     ["@lsp.type.number"] = { link = "@number" },
     ["@lsp.type.operator"] = { link = "@operator" },
-    ["@lsp.type.parameter"] = { link = "@parameter" },
+    ["@lsp.type.parameter"] = { link = "@variable.parameter" },
     ["@lsp.type.property"] = { link = "@property" },
     ["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
     ["@lsp.type.selfTypeKeyword"] = { link = "@variable.builtin" },
@@ -399,7 +399,7 @@ function M.setup()
     -- LspTrouble
     TroubleText = { fg = c.dark.fg },
     TroubleCount = { fg = c.pink, bg = c.gutter.fg },
-    TroubleNormal = { fg = c.sidebar.fg, bg = c.sidebar.bg },
+    TroubleNormal = { fg = c.fg, bg = c.sidebar.bg },
 
     -- Illuminate
     illuminatedWord = { bg = make_alpha(c.gutter.fg, 0.5) },
@@ -481,7 +481,7 @@ function M.setup()
     NvimTreeImageFile = { fg = c.sidebar.fg },
     NvimTreeSymlink = { fg = c.teal },
     NvimTreeFolderIcon = { bg = c.none, fg = c.purple },
-    -- NvimTreeFolderName= { fg = c.dark_fg },
+    -- NvimTreeFolderName= { fg = c.float.fg },
 
     NeoTreeNormal = { fg = c.sidebar.fg, bg = c.sidebar.bg },
     NeoTreeNormalNC = { fg = c.sidebar.fg, bg = c.sidebar.bg },
@@ -785,10 +785,74 @@ function M.setup()
     -- TreesitterContext = { bg = util.darken(c.bg_visual, 0.4) },
   }
 
+  if not vim.diagnostic then
+    local severity_map = {
+      Error = "Error",
+      Warn = "Warning",
+      Info = "Information",
+      Hint = "Hint",
+    }
+    local types = { "Default", "VirtualText", "Underline" }
+    for _, type in ipairs(types) do
+      for snew, sold in pairs(severity_map) do
+        theme.highlights["LspDiagnostics" .. type .. sold] = {
+          link = "Diagnostic" .. (type == "Default" and "" or type) .. snew,
+        }
+      end
+    end
+  end
+
+  -- lsp symbol kind and completion kind highlights
+  local kinds = {
+    Array = "@punctuation.bracket",
+    Boolean = "@boolean",
+    Class = "@type",
+    Color = "Special",
+    Constant = "@constant",
+    Constructor = "@constructor",
+    Enum = "@lsp.type.enum",
+    EnumMember = "@lsp.type.enumMember",
+    Event = "Special",
+    Field = "@variable.member",
+    File = "Normal",
+    Folder = "Directory",
+    Function = "@function",
+    Interface = "@lsp.type.interface",
+    Key = "@variable.member",
+    Keyword = "@lsp.type.keyword",
+    Method = "@function.method",
+    Module = "@module",
+    Namespace = "@module",
+    Null = "@constant.builtin",
+    Number = "@number",
+    Object = "@constant",
+    Operator = "@operator",
+    Package = "@module",
+    Property = "@property",
+    Reference = "@markup.link",
+    Snippet = "Conceal",
+    String = "@string",
+    Struct = "@lsp.type.struct",
+    Unit = "@lsp.type.struct",
+    Text = "@markup",
+    TypeParameter = "@lsp.type.typeParameter",
+    Variable = "@variable",
+    Value = "@string",
+  }
+
+  local kind_groups = { "NavicIcons%s", "Aerial%sIcon", "CmpItemKind%s", "NoiceCompletionItemKind%s" }
+  for kind, link in pairs(kinds) do
+    local base = "LspKind" .. kind
+    theme.highlights[base] = { link = link }
+    for _, plugin in pairs(kind_groups) do
+      theme.highlights[plugin:format(kind)] = { link = base }
+    end
+  end
+
   local markdown_rainbow = { c.purple, c.yellow, c.orange, c.green, c.cyan, c.pink }
 
   for i, color in ipairs(markdown_rainbow) do
-    theme.highlights["@text.title." .. i .. ".markdown"] = { fg = color, bold = true }
+    theme.highlights["@markup.heading." .. i .. ".markdown"] = { fg = color, bold = true }
     theme.highlights["Headline" .. i] = { bg = make_alpha(color, 0.05) }
   end
   theme.highlights["Headline"] = { link = "Headline1" }
