@@ -236,6 +236,7 @@ function M.setup()
     ["@keyword.return"] = { link = "@keyword" },
     ["@function.method"] = { link = "Function" },
     ["@function.method.call"] = { link = "@function.method" },
+    ["@namespace.builtin"] = { link = "@variable.builtin" },
     ["@none"] = {},
     ["@number"] = { link = "Number" },
     ["@keyword.directive"] = { link = "PreProc" },
@@ -247,14 +248,16 @@ function M.setup()
     ["@markup.environment.name"] = { link = "Type" },
     ["@markup.raw"] = { link = "String" },
     ["@markup.math"] = { link = "Special" },
-    ["@markup.strong"] = { bold = true },
+    ["@markup.strong"] = { fg = c.orange, bold = true },
     ["@markup.emphasis"] = { italic = true },
+    ["@markup.italic"] = { fg = c.yellow, italic = true },
     ["@markup.strikethrough"] = { strikethrough = true },
     ["@markup.underline"] = { underline = true },
     ["@markup.heading"] = { link = "Title" },
-    ["@markup.link.label"] = { link = "SpecialChar" },
+    ["@markup.link.label"] = { fg = c.pink },
     ["@markup.link.label.symbol"] = { link = "Identifier" },
     ["@markup.link.url"] = { link = "Underlined" },
+    ["@comment.note"] = { fg = c.hint },
     ["@comment.hint"] = { fg = c.hint },
     ["@comment.error"] = { fg = c.error },
     ["@comment.info"] = { fg = c.info },
@@ -276,7 +279,6 @@ function M.setup()
     ["@punctuation.delimiter"] = { fg = c.fg }, -- For delimiters ie: `.`
     ["@punctuation.bracket"] = { fg = c.dark.fg }, -- For brackets and parens.
     ["@markup.list"] = { fg = c.cyan }, -- For special punctutation that does not fall in the catagories before.
-    ["@markup.list.markdown"] = { fg = c.purple, bold = true },
 
     --- Literals
     ["@string.documentation"] = { fg = c.yellow },
@@ -307,8 +309,8 @@ function M.setup()
 
     --- Text
     -- ["@markup.raw.markdown"] = { fg = c.purple },
-    ["@markup.raw.markdown_inline"] = { bg = c.black, fg = c.purple },
-    ["@markup.link"] = { fg = c.orange, bold = true },
+    ["@markup.raw.markdown_inline"] = { bg = c.black, fg = c.green },
+    ["@markup.link"] = { fg = c.cyan },
 
     ["@markup.list.unchecked"] = { fg = c.cyan }, -- For brackets and parens.
     ["@markup.list.checked"] = { fg = c.green }, -- For brackets and parens.
@@ -339,6 +341,7 @@ function M.setup()
     ["@lsp.type.keyword"] = { link = "@keyword" },
     ["@lsp.type.lifetime"] = { link = "@keyword.storage" },
     ["@lsp.type.namespace"] = { link = "@module" },
+    ["@lsp.type.annotation"] = { link = "@annotation" },
     ["@lsp.type.number"] = { link = "@number" },
     ["@lsp.type.operator"] = { link = "@operator" },
     ["@lsp.type.parameter"] = { link = "@variable.parameter" },
@@ -366,6 +369,7 @@ function M.setup()
     ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"] = { link = "@variable" },
     ["@lsp.typemod.variable.static"] = { link = "@constant" },
+    ["@lsp.typemod.namespace.importDeclaration"] = { fg = c.fg },
     -- NOTE: maybe add these with distinct highlights?
     -- ["@lsp.typemod.variable.globalScope"] (global variables)
 

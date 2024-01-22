@@ -98,7 +98,7 @@ let g:lightline = {'colorscheme': 'dracula'}
 
 > ❗️ Set the configuration **BEFORE** loading the color scheme with `colorscheme dracula`.
 
-The theme offers four styles: [storm](#storm), [moon](#moon), [night](#night),
+The theme offers four styles: [default](#default), [soft](#soft)
 and [day](#day).
 
 The [day](#day) style is used when `{ style = "day" }` is passed to
