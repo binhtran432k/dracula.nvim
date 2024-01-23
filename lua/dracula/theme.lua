@@ -271,7 +271,7 @@ function M.setup()
     -- TODO:
     -- ["@comment.documentation"] = { },
     ["@operator"] = { fg = c.pink }, -- For any operator: `+`, but also `->` and `*` in C.
-    ["@tag"] = { fg = c.cyan },
+    ["@tag"] = { fg = c.pink },
     ["@tag.attribute"] = { link = "@property" },
     ["@tag.delimiter"] = { link = "Delimiter" },
 
@@ -320,11 +320,6 @@ function M.setup()
     ["@diff.delta"] = { link = "DiffChange" },
 
     ["@module"] = { link = "Include" },
-
-    -- tsx
-    ["@tag.tsx"] = { fg = c.red },
-    ["@constructor.tsx"] = { fg = c.purple },
-    ["@tag.delimiter.tsx"] = { fg = make_alpha(c.teal, 0.7) },
 
     -- LSP Semantic Token Groups
     ["@lsp.type.boolean"] = { link = "@boolean" },
