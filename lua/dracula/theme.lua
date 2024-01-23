@@ -133,8 +133,8 @@ function M.setup()
     -- Structure     = { }, --  struct, union, enum, etc.
     -- Typedef       = { }, --  A typedef
 
-    Special = { fg = c.green, italic = true }, -- (preferred) any special symbol
-    -- SpecialChar   = { }, --  special character in a constant
+    Special = { fg = c.purple, italic = true }, -- (preferred) any special symbol
+    SpecialChar = { fg = c.bright_blue, italic = true }, --  special character in a constant
     -- Tag           = { }, --    you can use CTRL-] on this
     -- Delimiter     = { }, --  character that needs attention
     -- SpecialComment= { }, -- special things inside a comment
