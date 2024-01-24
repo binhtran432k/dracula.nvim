@@ -795,6 +795,7 @@ function M.setup()
     MasonMutedBlock = { bg = c.line },
     MasonMutedBlockBold = { bg = c.line, bold = true },
     MasonHeaderSecondary = { bg = c.purple, fg = c.black, bold = true },
+    MasonHighlightSecondary = { fg = c.border_header },
     MasonHighlightBlockSecondary = { bg = c.border_header, fg = c.black },
     MasonHighlightBlockBoldSecondary = { bg = c.border_header, fg = c.black, bold = true },
   }
