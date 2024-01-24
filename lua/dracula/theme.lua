@@ -333,7 +333,7 @@ function M.setup()
     ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
     ["@lsp.type.formatSpecifier"] = { link = "@markup.list" },
     ["@lsp.type.generic"] = { link = "@variable" },
-    ["@lsp.type.interface"] = { fg = make_alpha(c.cyan, 0.8) },
+    ["@lsp.type.interface"] = { fg = c.bright_cyan },
     ["@lsp.type.keyword"] = { link = "@keyword" },
     ["@lsp.type.lifetime"] = { link = "@keyword.storage" },
     ["@lsp.type.namespace"] = { link = "@module" },
