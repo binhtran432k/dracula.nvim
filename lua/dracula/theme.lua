@@ -786,6 +786,17 @@ function M.setup()
     TreesitterContext = { bg = make_alpha(c.gutter.fg, 0.8) },
     Hlargs = { fg = c.yellow },
     -- TreesitterContext = { bg = util.darken(c.bg_visual, 0.4) },
+
+    -- Mason
+    MasonHeader = { bg = c.border_header, fg = c.black },
+    MasonHighlight = { fg = c.purple },
+    MasonHighlightBlock = { bg = c.purple, fg = c.black },
+    MasonHighlightBlockBold = { bg = c.purple, fg = c.black, bold = true },
+    MasonMutedBlock = { bg = c.line },
+    MasonMutedBlockBold = { bg = c.line, bold = true },
+    MasonHeaderSecondary = { bg = c.purple, fg = c.black, bold = true },
+    MasonHighlightBlockSecondary = { bg = c.border_header, fg = c.black },
+    MasonHighlightBlockBoldSecondary = { bg = c.border_header, fg = c.black, bold = true },
   }
 
   if not vim.diagnostic then
