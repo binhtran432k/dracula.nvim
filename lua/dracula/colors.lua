@@ -158,7 +158,7 @@ function M.setup(opts)
     bg = util.blend(colors.bg, "#000000", 0.7),
   }
   colors.gutter = {
-    fg = make_alpha(colors.white, "3A"),
+    fg = make_alpha(colors.white, "2F"),
     bg = make_alpha(colors.selection, "70"),
   }
   colors.sidebar = {
