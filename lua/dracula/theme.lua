@@ -460,7 +460,7 @@ function M.setup()
     GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
-    TelescopeTitle = { fg = c.pink, bg = c.float.bg },
+    TelescopeTitle = { fg = c.border_header, bg = c.float.bg },
     TelescopeBorder = { fg = c.border, bg = c.float.bg },
     TelescopeNormal = { fg = c.fg, bg = c.float.bg },
 

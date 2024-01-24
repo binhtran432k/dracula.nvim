@@ -37,6 +37,7 @@ local M = {}
 ---@field inactive string
 ---@field line string
 ---@field border string
+---@field border_header string
 ---@field visual string
 ---@field search string
 ---@field search_alt string
@@ -145,6 +146,7 @@ function M.setup(opts)
   colors.todo = colors.bright_cyan
   colors.inactive = make_alpha(colors.white, "4A")
   colors.line = make_alpha(colors.selection, "75")
+  colors.border_header = colors.pink
   colors.border = make_alpha(colors.purple, 0.8)
   colors.visual = make_alpha(colors.purple, 0.4)
   colors.search = util.blend(colors.purple, "#0000ff", 0.5)
