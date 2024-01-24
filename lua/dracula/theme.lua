@@ -698,6 +698,8 @@ function M.setup()
     -- Lazy
     LazyProgressDone = { bold = true, fg = c.pink },
     LazyProgressTodo = { bold = true, fg = c.gutter.fg },
+    LazyButtonActive = { bg = c.inactive },
+    LazyH1 = { bg = c.border_header, fg = c.black },
 
     -- Notify
     NotifyBackground = { fg = c.fg, bg = c.bg },
