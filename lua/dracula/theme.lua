@@ -114,15 +114,15 @@ function M.setup()
     Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name
     Function = { fg = c.green, style = options.styles.functions }, -- function name (also: methods for classes)
 
-    Statement = { fg = c.pink }, -- (preferred) any statement
+    Statement = { fg = c.pink, style = options.styles.keywords }, -- (preferred) any statement
     -- Conditional   = { }, --  if, then, else, endif, switch, etc.
     -- Repeat        = { }, --   for, do, while, etc.
     -- Label         = { }, --    case, default, etc.
     Operator = { fg = c.pink }, -- "sizeof", "+", "*", etc.
-    Keyword = { fg = c.pink, style = options.styles.keywords }, --  any other keyword
+    -- Keyword = { }, --  any other keyword
     -- Exception     = { }, --  try, catch, throw
 
-    PreProc = { fg = c.pink }, -- (preferred) generic Preprocessor
+    PreProc = { fg = c.pink, style = options.styles.keywords }, -- (preferred) generic Preprocessor
     -- Include       = { }, --  preprocessor #include
     -- Define        = { }, --   preprocessor #define
     -- Macro         = { }, --    same as Define
@@ -218,30 +218,19 @@ function M.setup()
     ["@character"] = { link = "Character" },
     ["@character.special"] = { link = "SpecialChar" },
     ["@comment"] = { link = "Comment" },
-    ["@keyword.conditional"] = { link = "Conditional" },
     ["@constant"] = { link = "Constant" },
     ["@constant.builtin"] = { link = "Special" },
     ["@constant.macro"] = { link = "Define" },
-    ["@keyword.debug"] = { link = "Debug" },
-    ["@keyword.directive.define"] = { link = "Define" },
-    ["@keyword.exception"] = { link = "Exception" },
     ["@number.float"] = { link = "Float" },
     ["@function"] = { link = "Function" },
     ["@function.builtin"] = { link = "Special" },
     ["@function.call"] = { link = "@function" },
     ["@function.macro"] = { link = "Macro" },
-    ["@keyword.include"] = { link = "Include" },
-    ["@keyword.coroutine"] = { link = "@keyword" },
-    ["@keyword.operator"] = { link = "@operator" },
-    ["@keyword.return"] = { link = "@keyword" },
     ["@function.method"] = { link = "Function" },
     ["@function.method.call"] = { link = "@function.method" },
     ["@namespace.builtin"] = { link = "@variable.builtin" },
     ["@none"] = {},
     ["@number"] = { link = "Number" },
-    ["@keyword.directive"] = { link = "PreProc" },
-    ["@keyword.repeat"] = { link = "Repeat" },
-    ["@keyword.storage"] = { link = "StorageClass" },
     ["@string"] = { link = "String" },
     ["@markup"] = { link = "@none" },
     ["@markup.environment"] = { link = "Macro" },
@@ -266,6 +255,17 @@ function M.setup()
     ["@type"] = { link = "Type" },
     ["@type.definition"] = { link = "Typedef" },
     ["@type.qualifier"] = { link = "@keyword" },
+    ["@keyword.conditional"] = { link = "Conditional" },
+    ["@keyword.debug"] = { fg = c.pink, style = options.styles.keywords },
+    ["@keyword.directive.define"] = { link = "Define" },
+    ["@keyword.exception"] = { link = "Exception" },
+    ["@keyword.include"] = { link = "Include" },
+    ["@keyword.coroutine"] = { link = "@keyword" },
+    ["@keyword.operator"] = { fg = c.pink, style = options.styles.keywords },
+    ["@keyword.return"] = { link = "@keyword" },
+    ["@keyword.directive"] = { link = "PreProc" },
+    ["@keyword.repeat"] = { link = "Repeat" },
+    ["@keyword.storage"] = { link = "StorageClass" },
 
     --- Misc
     -- TODO:
@@ -292,8 +292,8 @@ function M.setup()
 
     --- Keywords
     ["@keyword"] = { fg = c.pink, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
-    ["@keyword.function"] = { fg = c.cyan, style = options.styles.functions }, -- For keywords used to define a fuction.
-    ["@keyword.function.ruby"] = { fg = c.pink, style = options.styles.functions }, -- For keywords used to define a fuction.
+    ["@keyword.function"] = { fg = c.cyan, style = options.styles.keywords }, -- For keywords used to define a fuction.
+    ["@keyword.function.ruby"] = { fg = c.pink, style = options.styles.keywords }, -- For keywords used to define a fuction.
 
     ["@label"] = { fg = c.cyan }, -- For labels: `label:` in C and `:label:` in Lua.
 
