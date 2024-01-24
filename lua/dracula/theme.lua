@@ -278,7 +278,7 @@ function M.setup()
     --- Punctuation
     ["@punctuation.delimiter"] = { fg = c.fg }, -- For delimiters ie: `.`
     ["@punctuation.bracket"] = { fg = c.dark.fg }, -- For brackets and parens.
-    ["@punctuation.special"] = { fg = c.bright_cyan }, -- For special symbols (e.g. `{}` in string interpolation)
+    ["@punctuation.special"] = { fg = c.cyan }, -- For special symbols (e.g. `{}` in string interpolation)
     ["@markup.list"] = { fg = c.cyan }, -- For special punctutation that does not fall in the catagories before.
 
     --- Literals
