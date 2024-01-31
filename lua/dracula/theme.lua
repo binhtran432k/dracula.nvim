@@ -265,7 +265,7 @@ function M.setup()
     ["@keyword.return"] = { link = "@keyword" },
     ["@keyword.directive"] = { link = "PreProc" },
     ["@keyword.repeat"] = { link = "Repeat" },
-    ["@keyword.storage"] = { link = "StorageClass" },
+    ["@keyword.storage"] = { fg = c.cyan, style = options.styles.keywords },
 
     --- Misc
     -- TODO:
