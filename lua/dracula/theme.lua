@@ -306,7 +306,8 @@ function M.setup()
     --- Identifiers
     ["@variable"] = { fg = c.fg, style = options.styles.variables }, -- Any variable name that does not have another highlight.
     ["@variable.builtin"] = { fg = c.purple, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-    ["@module.builtin"] = { fg = c.orange, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
+    ["@module"] = { fg = c.cyan }, -- modules or namespace
+    ["@module.builtin"] = { fg = c.cyan, italic = true }, -- built-in modules or namespaces
 
     --- Text
     -- ["@markup.raw.markdown"] = { fg = c.purple },
@@ -319,8 +320,6 @@ function M.setup()
     ["@diff.plus"] = { link = "DiffAdd" },
     ["@diff.minus"] = { link = "DiffDelete" },
     ["@diff.delta"] = { link = "DiffChange" },
-
-    ["@module"] = { link = "Include" },
 
     -- LSP Semantic Token Groups
     ["@lsp.type.boolean"] = { link = "@boolean" },
