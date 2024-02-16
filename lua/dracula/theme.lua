@@ -129,9 +129,9 @@ function M.setup()
     -- PreCondit     = { }, --  preprocessor #if, #else, #endif, etc.
 
     Type = { fg = c.cyan }, -- (preferred) int, long, char, etc.
-    -- StorageClass  = { }, -- static, register, volatile, etc.
-    -- Structure     = { }, --  struct, union, enum, etc.
-    -- Typedef       = { }, --  A typedef
+    StorageClass = { link = "Keyword" }, -- static, register, volatile, etc.
+    Structure = { link = "Keyword" }, --  struct, union, enum, etc.
+    Typedef = { link = "Keyword" }, --  A typedef
 
     Special = { fg = c.purple, italic = true }, -- (preferred) any special symbol
     SpecialChar = { fg = c.bright_blue, italic = true }, --  special character in a constant
@@ -265,7 +265,7 @@ function M.setup()
     ["@keyword.return"] = { link = "@keyword" },
     ["@keyword.directive"] = { link = "PreProc" },
     ["@keyword.repeat"] = { link = "Repeat" },
-    ["@keyword.storage"] = { fg = c.cyan, style = options.styles.keywords },
+    ["@keyword.storage"] = { link = "StorageClass" },
 
     --- Misc
     -- TODO:
