@@ -327,6 +327,7 @@ function M.setup()
     ["@lsp.type.comment"] = { link = "@comment" },
     ["@lsp.type.decorator"] = { link = "@attribute" },
     ["@lsp.type.deriveHelper"] = { link = "@attribute" },
+    ["@lsp.type.class"] = { link = "@type" },
     ["@lsp.type.enum"] = { link = "@type" },
     ["@lsp.type.enumMember"] = { link = "@constant" },
     ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
