@@ -405,11 +405,11 @@ function M.setup()
     TroubleNormal = { fg = c.fg, bg = c.sidebar.bg },
 
     -- Illuminate
-    illuminatedWord = { bg = make_alpha(c.gutter.fg, 0.8) },
-    illuminatedCurWord = { bg = make_alpha(c.gutter.fg, 0.8) },
-    IlluminatedWordText = { bg = make_alpha(c.gutter.fg, 0.8) },
-    IlluminatedWordRead = { bg = make_alpha(c.gutter.fg, 0.8) },
-    IlluminatedWordWrite = { bg = make_alpha(c.gutter.fg, 0.8) },
+    illuminatedWord = { bg = c.gutter.fg },
+    illuminatedCurWord = { bg = c.gutter.fg },
+    IlluminatedWordText = { bg = c.gutter.fg },
+    IlluminatedWordRead = { bg = c.gutter.fg },
+    IlluminatedWordWrite = { bg = c.gutter.fg },
 
     -- diff
     diffAdded = { fg = c.git.add },
