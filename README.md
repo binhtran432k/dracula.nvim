@@ -27,7 +27,7 @@ Dracula](https://github.com/dracula/visual-studio-code) theme.
 ## ⚡️ Requirements
 
 - [Neovim](https://github.com/neovim/neovim) >=
-  [0.7.2](https://github.com/neovim/neovim/releases/tag/v0.7.2)
+  [0.8.0](https://github.com/neovim/neovim/releases/tag/v0.8.0)
 
 ## 📦 Installation
 
