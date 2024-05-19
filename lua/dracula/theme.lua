@@ -57,6 +57,8 @@ function M.setup()
     SignColumnSB = { bg = c.sidebar.bg, fg = c.gutter.fg }, -- column where |signs| are displayed
     Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
     LineNr = { fg = c.gutter.fg }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNrAbove = { fg = c.gutter.fg },
+    LineNrBelow = { fg = c.gutter.fg },
     CursorLineNr = { fg = c.fg, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.orange, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.dark.fg, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -202,7 +204,7 @@ function M.setup()
 
     LspSignatureActiveParameter = { bg = make_alpha(c.visual, 0.4), bold = true },
     LspCodeLens = { fg = c.comment },
-    LspInlayHint = { bg = make_alpha(c.purple, 0.1), fg = c.gutter.fg },
+    LspInlayHint = { fg = make_alpha(c.fg, 0.5), italic = true },
 
     LspInfoBorder = { fg = c.border, bg = c.float.bg },
 
