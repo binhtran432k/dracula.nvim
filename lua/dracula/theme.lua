@@ -682,6 +682,8 @@ function M.setup()
     IndentBlanklineContextChar = { fg = c.purple, nocombine = true },
     IblIndent = { fg = c.gutter.fg, nocombine = true },
     IblScope = { fg = c.purple, nocombine = true },
+    IndentLine = { fg = c.gutter.fg, nocombine = true },
+    IndentLineCurrent = { fg = c.purple, nocombine = true },
 
     -- Scrollbar
     ScrollbarHandle = { fg = c.none, bg = c.gutter.bg },
