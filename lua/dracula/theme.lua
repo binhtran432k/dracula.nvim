@@ -500,6 +500,8 @@ function M.setup()
     NeoTreeNormal = { fg = c.sidebar.fg, bg = c.sidebar.bg },
     NeoTreeNormalNC = { fg = c.sidebar.fg, bg = c.sidebar.bg },
     NeoTreeDimText = { fg = c.gutter.fg },
+    NeoTreeGitModified = { fg = c.orange },
+    NeoTreeGitUntracked = { fg = c.pink },
 
     -- Fern
     FernBranchText = { fg = c.purple },
