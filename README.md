@@ -19,7 +19,7 @@ Dracula](https://github.com/dracula/visual-studio-code) theme.
 ## ✨ Features
 
 - Supports the latest [Neovim](https://github.com/neovim/neovim)
-  [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0) features.
+  [0.10.0](https://github.com/neovim/neovim/releases/tag/v0.10.0) features.
 - Enhances terminal colors.
 - Introduces a darker background option for sidebar-like windows.
 - Supports all major plugins.
@@ -27,7 +27,7 @@ Dracula](https://github.com/dracula/visual-studio-code) theme.
 ## ⚡️ Requirements
 
 - [Neovim](https://github.com/neovim/neovim) >=
-  [0.8.0](https://github.com/neovim/neovim/releases/tag/v0.8.0)
+  [0.10.0](https://github.com/neovim/neovim/releases/tag/v0.10.0)
 
 ## 📦 Installation
 
@@ -109,8 +109,6 @@ unless `setup` is explicitly called.
 
 ```lua
 require("dracula").setup({
-  -- your configuration comes here
-  -- or leave it empty to use the default settings
   style = "default", -- The theme comes in three styles, `default`, a darker variant `soft` and `day`
   light_style = "day", -- The theme is used when the background is set to light
   transparent = false, -- Enable this to disable setting the background color
@@ -140,6 +138,21 @@ require("dracula").setup({
   --- function will be called with a Highlights and ColorScheme table
   on_highlights = function() end,
   use_background = true, -- can be light/dark/auto. When auto, background will be set to vim.o.background
+
+  cache = true, -- When set to true, the theme will be cached for better performance
+
+  plugins = {
+    -- enable all plugins when not using lazy.nvim
+    -- set to false to manually enable/disable plugins
+    all = package.loaded.lazy == nil,
+    -- uses your plugin manager to automatically enable needed plugins
+    -- currently only lazy.nvim is supported
+    auto = true,
+    -- add any plugins here that you want to enable
+    -- for all possible plugins, see:
+    --   * https://github.com/folke/tokyonight.nvim/tree/main/lua/tokyonight/groups
+    -- telescope = true,
+  },
 })
 ```
 
@@ -177,14 +190,14 @@ require("dracula").setup({
 ```lua
 require("dracula").setup({
   on_highlights = function(hl, c)
-    local prompt = c.darker_bg
+    local prompt = c.dark.bg
     hl.TelescopeNormal = {
-      bg = c.dark_bg,
-      fg = c.dark_fg,
+      bg = c.bg,
+      fg = c.fg,
     }
     hl.TelescopeBorder = {
-      bg = c.dark_bg,
-      fg = c.dark_bg,
+      bg = c.bg,
+      fg = c.bg,
     }
     hl.TelescopePromptNormal = {
       bg = prompt,
@@ -198,12 +211,12 @@ require("dracula").setup({
       fg = prompt,
     }
     hl.TelescopePreviewTitle = {
-      bg = c.dark_bg,
-      fg = c.dark_bg,
+      bg = c.bg,
+      fg = c.bg,
     }
     hl.TelescopeResultsTitle = {
-      bg = c.dark_bg,
-      fg = c.dark_bg,
+      bg = c.bg,
+      fg = c.bg,
     }
   end,
 })

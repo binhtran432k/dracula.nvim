@@ -1,1 +1,1 @@
-require("dracula")._load("day")
+require("dracula").load({ style = "day" })

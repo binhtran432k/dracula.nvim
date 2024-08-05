@@ -1,1 +1,1 @@
-require("dracula")._load("soft")
+require("dracula").load({ style = "soft" })
