@@ -1,9 +1,15 @@
 local M = {}
 
+M.version = "2.0.0"
+
 ---@class DraculaConfig
----@field style string
----@field on_colors fun(colors: Pallete)
----@field on_highlights fun(highlights: Highlights, colors: Pallete)
+---@field style? DraculaStyle
+---@field light_style? DraculaStyle
+---@field styles? DraculaHighlights
+---@field sidebars? string[]
+---@field on_colors? fun(colors: DraculaPalette)
+---@field on_highlights? fun(highlights: DraculaHighlights, colors: DraculaPalette)
+---@field plugins? table<string, boolean>
 local defaults = {
   style = "default", -- The theme comes in three styles, `default`, a darker variant `soft` and `day`
   light_style = "day", -- The theme is used when the background is set to light
@@ -34,26 +40,43 @@ local defaults = {
   --- function will be called with a Highlights and ColorScheme table
   on_highlights = function() end,
   use_background = true, -- can be light/dark/auto. When auto, background will be set to vim.o.background
+
+  cache = true, -- When set to true, the theme will be cached for better performance
+
+  plugins = {
+    -- enable all plugins when not using lazy.nvim
+    -- set to false to manually enable/disable plugins
+    all = package.loaded.lazy == nil,
+    -- uses your plugin manager to automatically enable needed plugins
+    -- currently only lazy.nvim is supported
+    auto = true,
+    -- add any plugins here that you want to enable
+    -- for all possible plugins, see:
+    --   * https://github.com/folke/tokyonight.nvim/tree/main/lua/tokyonight/groups
+    -- telescope = true,
+  },
 }
 
 ---@type DraculaConfig
----@diagnostic disable-next-line: missing-fields
-M.options = {}
+M.options = nil
 
----@param options DraculaConfig|nil
-function M.setup(options)
-  M.options = vim.tbl_deep_extend("force", {}, defaults, options or {})
+---@param opts? DraculaConfig
+function M.setup(opts)
+  M.options = vim.tbl_deep_extend("force", {}, defaults, opts or {})
 end
 
----@param options DraculaConfig|nil
-function M.extend(options)
-  M.options = vim.tbl_deep_extend("force", {}, M.options or defaults, options or {})
+---@param opts? DraculaConfig
+---@return DraculaConfig
+function M.extend(opts)
+  return opts and vim.tbl_deep_extend("force", {}, M.options, opts) or M.options
 end
 
-function M.is_day()
-  return M.options.style == "day" or M.options.use_background and vim.o.background == "light"
-end
-
-M.setup()
+setmetatable(M, {
+  __index = function(_, k)
+    if k == "options" then
+      return M.defaults
+    end
+  end,
+})
 
 return M

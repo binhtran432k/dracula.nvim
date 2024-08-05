@@ -1,31 +1,28 @@
-local util = require("dracula.util")
-local theme = require("dracula.theme")
-local config = require("dracula.config")
-
 local M = {}
 
-function M._load(style)
-  if style and not M._style then
-    M._style = config.options.style
-  end
-  if not style and M._style then
-    config.options.style = M._style
-    M._style = nil
-  end
-  M.load({ style = style, use_background = style == nil })
-end
+---@type {light?: DraculaStyle, dark?: DraculaStyle}
+M.styles = {}
 
----@param opts DraculaConfig|nil
+---@param opts? DraculaConfig
 function M.load(opts)
-  if opts then
-    require("dracula.config").extend(opts)
+  opts = require("dracula.config").extend(opts)
+  local bg = vim.o.background
+  local style_bg = opts.style == "day" and "light" or "dark"
+
+  local colors_name = require("dracula.util").get_style_name(opts)
+
+  if bg ~= style_bg then
+    if vim.g.colors_name == colors_name then
+      opts.style = bg == "light" and (M.styles.light or "day") or (M.styles.dark or "default")
+    else
+      vim.o.background = style_bg
+    end
   end
-  util.load(theme.setup())
+
+  M.styles[vim.o.background] = opts.style
+  return require("dracula.theme").setup(opts)
 end
 
-M.setup = config.setup
-
--- keep for backward compatibility
-M.colorscheme = M.load
+M.setup = require("dracula.config").setup
 
 return M

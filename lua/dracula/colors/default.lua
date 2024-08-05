@@ -1,0 +1,23 @@
+---@type DraculaPurePalette
+return {
+  bg = "#282A36",
+  selection = "#44475A",
+  fg = "#F8F8F2",
+  comment = "#6272A4",
+  cyan = "#8BE9FD",
+  green = "#50FA7B",
+  orange = "#FFB86C",
+  pink = "#FF79C6",
+  purple = "#BD93F9",
+  red = "#FF5555",
+  yellow = "#F1FA8C",
+  black = "#21222C",
+  white = "#F8F8F2",
+  bright_red = "#FF6E6E",
+  bright_green = "#69FF94",
+  bright_yellow = "#FFFFA5",
+  bright_blue = "#D6ACFF",
+  bright_magenta = "#FF92DF",
+  bright_cyan = "#A4FFFF",
+  bright_white = "#FFFFFF",
+}
