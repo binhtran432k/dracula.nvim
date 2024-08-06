@@ -61,8 +61,8 @@ function M.setup(opts)
   colors.border_header = colors.pink
   colors.border = util.blend_bg(colors.purple, 0.8)
   colors.visual = util.blend_bg(colors.purple, 0.4)
-  colors.search = util.blend(colors.purple, 0.5, "#0000ff")
-  colors.search_alt = util.blend(colors.pink, 0.6, "#ff0000")
+  colors.search = util.blend(colors.purple, 0.6, "#0000ff")
+  colors.search_alt = util.blend(colors.pink, 0.7, "#ff0000")
   colors.statusline = util.blend(colors.bg, 0.5, "#000000")
 
   colors.dark = {
