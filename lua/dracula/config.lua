@@ -1,6 +1,6 @@
 local M = {}
 
-M.version = "2.0.0"
+M.version = "2.0.1"
 
 ---@class DraculaConfig
 ---@field style? DraculaStyle
@@ -42,6 +42,8 @@ local defaults = {
   use_background = true, -- can be light/dark/auto. When auto, background will be set to vim.o.background
 
   cache = true, -- When set to true, the theme will be cached for better performance
+
+  prefer_undercurl = true, -- When set to true, the undercurl will be used place of underline in specific contexts.
 
   plugins = {
     -- enable all plugins when not using lazy.nvim

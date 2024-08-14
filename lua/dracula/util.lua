@@ -6,7 +6,6 @@ M.bg = "#000000"
 M.fg = "#ffffff"
 M.day_brightness = 0.3
 
-
 ---@param c string
 local function rgb(c)
   c = string.lower(c)
@@ -169,6 +168,17 @@ function M.cache.clear()
   for _, style in ipairs({ "default", "day", "soft" }) do
     uv.fs_unlink(M.cache.file(style))
   end
+end
+
+---@param hl DraculaHighlight
+---@param opts DraculaConfig
+function M.handle_undercurl(opts, hl)
+  if opts.prefer_undercurl then
+    hl.undercurl = true
+  else
+    hl.underline = true
+  end
+  return hl
 end
 
 return M
