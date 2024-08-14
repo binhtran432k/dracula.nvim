@@ -3,7 +3,7 @@ local util = require("dracula.util")
 local M = {}
 
 ---@type DraculaHighlightsFn
-function M.get(c)
+function M.get(c, opts)
   return {
     ["@lsp.type.annotation"] = { link = "@annotation" },
     ["@lsp.type.boolean"] = "@boolean",
@@ -32,7 +32,7 @@ function M.get(c)
     ["@lsp.type.string"] = "@string",
     ["@lsp.type.typeAlias"] = "@type.definition",
     ["@lsp.type.typeParameter"] = "@type",
-    ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
+    ["@lsp.type.unresolvedReference"] = util.handle_undercurl(opts, { sp = c.error }),
     ["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
     ["@lsp.typemod.class.defaultLibrary"] = "@type.builtin",
     ["@lsp.typemod.enum.defaultLibrary"] = "@type.builtin",

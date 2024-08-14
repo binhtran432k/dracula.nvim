@@ -57,10 +57,10 @@ function M.get(c, opts)
     IncSearch = { bg = c.orange, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
     SpecialKey = { fg = c.gutter.fg }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-    SpellBad = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-    SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-    SpellLocal = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-    SpellRare = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+    SpellBad = util.handle_undercurl(opts, { sp = c.error }), -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+    SpellCap = util.handle_undercurl(opts, { sp = c.warning }), -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+    SpellLocal = util.handle_undercurl(opts, { sp = c.info }), -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+    SpellRare = util.handle_undercurl(opts, { sp = c.hint }), -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine = { fg = c.sidebar.fg, bg = c.statusline }, -- status line of current window
     StatusLineNC = { fg = c.gutter.fg, bg = c.statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine = { bg = c.statusline, fg = c.gutter.fg }, -- tab pages line, not active tab page label
@@ -179,10 +179,10 @@ function M.get(c, opts)
     DiagnosticVirtualTextInfo = { bg = util.blend_bg(c.info, 0.1), fg = c.info }, -- Used for "Information" diagnostic virtual text
     DiagnosticVirtualTextHint = { bg = util.blend_bg(c.hint, 0.1), fg = c.hint }, -- Used for "Hint" diagnostic virtual text
 
-    DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
-    DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
-    DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineError = util.handle_undercurl(opts, { sp = c.error }), -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn = util.handle_undercurl(opts, { sp = c.warning }), -- Used to underline "Warning" diagnostics
+    DiagnosticUnderlineInfo = util.handle_undercurl(opts, { sp = c.info }), -- Used to underline "Information" diagnostics
+    DiagnosticUnderlineHint = util.handle_undercurl(opts, { sp = c.hint }), -- Used to underline "Hint" diagnostics
 
     -- Health
     healthError = { fg = c.error },

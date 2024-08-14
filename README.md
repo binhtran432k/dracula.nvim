@@ -141,6 +141,8 @@ require("dracula").setup({
 
   cache = true, -- When set to true, the theme will be cached for better performance
 
+  prefer_undercurl = true, -- When set to true, the undercurl will be used place of underline in specific contexts.
+
   plugins = {
     -- enable all plugins when not using lazy.nvim
     -- set to false to manually enable/disable plugins
