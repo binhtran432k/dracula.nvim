@@ -198,6 +198,9 @@ function M.get(c, opts)
     diffFile = { fg = c.purple },
     diffLine = { fg = c.comment },
     diffIndexLine = { fg = c.pink },
+
+    -- Snippet
+    SnippetTabStop = { bg = util.blend_bg(c.warning, 0.2) },
   }
 end
 
