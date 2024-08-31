@@ -13,7 +13,7 @@ function M.get(c)
     MiniTablineModifiedCurrent = { fg = c.warning, bg = c.gutter.fg },
     MiniTablineModifiedHidden = { bg = c.statusline, fg = util.blend_bg(c.warning, 0.7) },
     MiniTablineModifiedVisible = { fg = c.warning, bg = c.statusline },
-    MiniTablineTabpagesection = { bg = c.statusline, fg = c.none },
+    MiniTablineTabpagesection = { bg = c.gutter.fg, fg = c.none },
     MiniTablineVisible = { fg = c.fg, bg = c.statusline },
   }
 end
