@@ -2,7 +2,7 @@ local util = require("dracula.util")
 
 local M = {}
 
-M.url = "https://github.com/MeanderingProgrammer/markdown.nvim"
+M.url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
 
 ---@type DraculaHighlightsFn
 function M.get(c)
