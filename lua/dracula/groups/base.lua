@@ -182,7 +182,8 @@ function M.get(c, opts)
     DiagnosticUnderlineError = util.handle_undercurl(opts, { sp = c.error }), -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = util.handle_undercurl(opts, { sp = c.warning }), -- Used to underline "Warning" diagnostics
     DiagnosticUnderlineInfo = util.handle_undercurl(opts, { sp = c.info }), -- Used to underline "Information" diagnostics
-    DiagnosticUnderlineHint = util.handle_undercurl(opts, { sp = c.hint }), -- Used to underline "Hint" diagnostics
+    --FIXME: Change sp to c.hint when zellij can work properly with it
+    DiagnosticUnderlineHint = util.handle_undercurl(opts, { sp = c.info }), -- Used to underline "Hint" diagnostics
 
     -- Health
     healthError = { fg = c.error },
