@@ -138,7 +138,11 @@ function M.setup(colors, opts)
     colors = colors,
     plugins = names,
     version = config.version,
-    opts = { styles = opts.styles, dim_inactive = opts.dim_inactive },
+    opts = {
+      transparent = opts.transparent,
+      styles = opts.styles,
+      dim_inactive = opts.dim_inactive,
+    },
   }
 
   ---@type DraculaHighlights|false|nil
