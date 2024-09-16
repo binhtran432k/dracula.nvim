@@ -14,6 +14,7 @@ function M.get(c)
     CmpItemAbbrMatchFuzzy = { fg = c.cyan, bg = c.none },
     CmpItemKindCodeium = { fg = c.teal, bg = c.none },
     CmpItemKindCopilot = { fg = c.teal, bg = c.none },
+    CmpItemKindSupermaven = { fg = c.teal, bg = c.none },
     CmpItemKindDefault = { fg = c.dark.fg, bg = c.none },
     CmpItemKindTabNine = { fg = c.teal, bg = c.none },
     CmpItemMenu = { fg = c.comment, bg = c.none },
