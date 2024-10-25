@@ -10,7 +10,7 @@ M.version = "2.0.2"
 ---@field on_colors? fun(colors: DraculaPalette)
 ---@field on_highlights? fun(highlights: DraculaHighlights, colors: DraculaPalette)
 ---@field plugins? table<string, boolean>
-local defaults = {
+M.defaults = {
   style = "default", -- The theme comes in three styles, `default`, a darker variant `soft` and `day`
   light_style = "day", -- The theme is used when the background is set to light
   transparent = false, -- Enable this to disable setting the background color
@@ -64,7 +64,7 @@ M.options = nil
 
 ---@param opts? DraculaConfig
 function M.setup(opts)
-  M.options = vim.tbl_deep_extend("force", {}, defaults, opts or {})
+  M.options = vim.tbl_deep_extend("force", {}, M.defaults, opts or {})
 end
 
 ---@param opts? DraculaConfig
