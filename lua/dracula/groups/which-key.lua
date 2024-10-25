@@ -9,7 +9,6 @@ function M.get(c, opts)
     WhichKeyGroup = { fg = c.purple },
     WhichKeyDesc = { fg = c.pink },
     WhichKeySeperator = { fg = c.comment },
-    WhichKeySeparator = { fg = c.comment },
     WhichKeyNormal = { bg = c.sidebar.bg },
     WhichKeyValue = { fg = c.sidebar.fg },
   }
