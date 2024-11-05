@@ -142,11 +142,16 @@ function M.setup(colors, opts)
       transparent = opts.transparent,
       styles = opts.styles,
       dim_inactive = opts.dim_inactive,
+      prefer_undercurl = opts.prefer_undercurl,
     },
   }
 
   ---@type DraculaHighlights|false|nil
   local ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.groups
+
+  if not cache then
+    util.cache.clear()
+  end
 
   if not ret then
     ret = {}
