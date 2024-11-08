@@ -6,15 +6,15 @@ Dracula](https://github.com/dracula/visual-studio-code) theme.
 
 ## Default
 
-![image](https://github.com/binhtran432k/dracula.nvim/assets/26183671/1dfd675f-8ac7-412a-a169-c34b7655775e)
+![image](https://github.com/user-attachments/assets/0da1156b-daf7-45a0-9188-c46800378d49)
 
 ## Soft
 
-![image](https://github.com/binhtran432k/dracula.nvim/assets/26183671/4b937177-28ba-44fe-bd25-3c7f8a353585)
+![image](https://github.com/user-attachments/assets/432f1892-026e-4d5a-80b3-31867da7ef3e)
 
 ## Day
 
-![image](https://github.com/binhtran432k/dracula.nvim/assets/26183671/759bf3c5-737e-4c41-b174-4ba288dd7654)
+![image](https://github.com/user-attachments/assets/bf04b8ae-0b82-4b93-9f8e-5287b17dde98)
 
 ## ✨ Features
 
@@ -239,3 +239,8 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 ## 🔥 Contributing
 
 Pull requests are welcome.
+
+## 🤝 Inspirations
+
+- Tokyonight: https://github.com/folke/tokyonight.nvim
+- Dracula: https://github.com/Mofiqul/dracula.nvim
