@@ -14,7 +14,7 @@ Dracula](https://github.com/dracula/visual-studio-code) theme.
 
 ## Day
 
-![image](https://github.com/user-attachments/assets/bf04b8ae-0b82-4b93-9f8e-5287b17dde98)
+![image](https://github.com/user-attachments/assets/f642ec1e-436c-4275-b519-90530796c232)
 
 ## ✨ Features
 

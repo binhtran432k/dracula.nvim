@@ -16,12 +16,6 @@ function M.setup(opts)
   util.day_brightness = opts.day_brightness
 
   local palette = M.styles[opts.style]
-  ---@type fun(colors: DraculaColorScheme)?
-  local post_run = nil
-  if type(palette) == "function" then
-    ---@type DraculaPalette, fun(colors: DraculaColorScheme)?
-    palette, post_run = palette(opts)
-  end
 
   -- Color Palette
   ---@class DraculaColorScheme: DraculaPalette
@@ -63,15 +57,15 @@ function M.setup(opts)
   colors.visual = util.blend_bg(colors.purple, 0.4)
   colors.search = util.blend(colors.purple, 0.6, "#0000ff")
   colors.search_alt = util.blend(colors.pink, 0.7, "#ff0000")
-  colors.statusline = util.blend(colors.bg, 0.5, "#000000")
+  colors.statusline = colors.black
 
   colors.dark = {
     fg = util.blend_bg(colors.fg, 0.8),
-    bg = util.blend(colors.bg, 0.7, "#000000"),
+    bg = colors.black,
   }
   colors.gutter = {
-    fg = util.blend_bg(colors.white, "32"),
-    bg = util.blend_bg(colors.white, "0A"),
+    fg = util.blend_fg(colors.selection, 0.95),
+    bg = colors.bg,
   }
   colors.sidebar = {
     fg = util.blend_bg(colors.fg, 0.8),
@@ -91,8 +85,9 @@ function M.setup(opts)
   }
   colors.rainbow = { colors.purple, colors.yellow, colors.orange, colors.green, colors.cyan, colors.pink }
 
-  if post_run then
-    post_run(colors)
+  if opts.style == "day" then
+    colors.search = util.blend_bg(colors.search, 0.4)
+    colors.search_alt = util.blend_bg(colors.search_alt, 0.4)
   end
 
   opts.on_colors(colors)
