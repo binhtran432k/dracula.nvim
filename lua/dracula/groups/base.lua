@@ -163,7 +163,7 @@ function M.get(c, opts)
 
     LspSignatureActiveParameter = { bg = util.blend_bg(c.visual, 0.4), bold = true },
     LspCodeLens = { fg = c.comment },
-    LspInlayHint = { fg = util.blend_bg(c.fg, 0.5), italic = true },
+    LspInlayHint = { fg = util.blend_fg(c.selection, 0.9), italic = true },
 
     LspInfoBorder = { fg = c.border, bg = c.float.bg },
 
@@ -172,7 +172,7 @@ function M.get(c, opts)
     DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
     DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticUnnecessary = { fg = util.blend_bg(c.fg, 0.6) }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticUnnecessary = { fg = util.blend_fg(c.selection, 0.5) }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
     DiagnosticVirtualTextError = { bg = util.blend_bg(c.error, 0.1), fg = c.error }, -- Used for "Error" diagnostic virtual text
     DiagnosticVirtualTextWarn = { bg = util.blend_bg(c.warning, 0.1), fg = c.warning }, -- Used for "Warning" diagnostic virtual text
@@ -182,8 +182,7 @@ function M.get(c, opts)
     DiagnosticUnderlineError = util.handle_undercurl(opts, { sp = c.error }), -- Used to underline "Error" diagnostics
     DiagnosticUnderlineWarn = util.handle_undercurl(opts, { sp = c.warning }), -- Used to underline "Warning" diagnostics
     DiagnosticUnderlineInfo = util.handle_undercurl(opts, { sp = c.info }), -- Used to underline "Information" diagnostics
-    --FIXME: Change sp to c.hint when zellij can work properly with it
-    DiagnosticUnderlineHint = util.handle_undercurl(opts, { sp = c.info }), -- Used to underline "Hint" diagnostics
+    DiagnosticUnderlineHint = util.handle_undercurl(opts, { sp = c.hint }), -- Used to underline "Hint" diagnostics
 
     -- Health
     healthError = { fg = c.error },
