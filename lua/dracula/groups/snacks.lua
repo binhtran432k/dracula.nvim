@@ -2,7 +2,7 @@ local util = require("dracula.util")
 
 local M = {}
 
-M.url = "https://github.com/rcarriga/nvim-notify"
+M.url = "https://github.com/folke/snacks.nvim"
 
 ---@type DraculaHighlightsFn
 function M.get(c, opts)
@@ -28,6 +28,14 @@ function M.get(c, opts)
     SnacksNotifierBorderWarn  = { fg = util.blend_bg(c.warning, 0.4), bg = opts.transparent and c.none or c.bg },
     SnacksNotifierIconWarn    = { fg = c.warning },
     SnacksNotifierTitleWarn   = { fg = c.warning },
+    -- Dashboard
+    SnacksDashboardDesc       = { fg = c.cyan },
+    SnacksDashboardFooter     = { fg = c.purple },
+    SnacksDashboardHeader     = { fg = c.pink },
+    SnacksDashboardIcon       = { fg = c.pink },
+    SnacksDashboardKey        = { fg = c.orange },
+    SnacksDashboardSpecial    = { fg = c.green },
+    SnacksDashboardDir        = { fg = c.purple },
   }
 end
 
