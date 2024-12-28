@@ -13,6 +13,7 @@ M.plugins = {
   ["dashboard-nvim"] = "dashboard",
   ["flash.nvim"] = "flash",
   ["fzf-lua"] = "fzf",
+  ["gitgraph.nvim"] = "gitgraph",
   ["gitsigns.nvim"] = "gitsigns",
   ["grug-far.nvim"] = "grug-far",
   ["headlines.nvim"] = "headlines",
