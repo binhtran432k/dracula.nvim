@@ -10,7 +10,7 @@ function M.get(c)
         BlinkCmpGhostText           = { fg = c.inactive },
         BlinkCmpKindCodeium         = { fg = c.teal, bg = c.none },
         BlinkCmpKindCopilot         = { fg = c.teal, bg = c.none },
-        BlinkCmpKindDefault         = { fg = c.dark, bg = c.none },
+        BlinkCmpKindDefault         = { fg = c.dark.fg, bg = c.none },
         BlinkCmpKindSupermaven      = { fg = c.teal, bg = c.none },
         BlinkCmpKindTabNine         = { fg = c.teal, bg = c.none },
         BlinkCmpLabel               = { fg = c.fg, bg = c.none },
