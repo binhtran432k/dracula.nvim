@@ -8,7 +8,7 @@ function M.get(c)
     MiniJump = { bg = c.pink, fg = c.white },
     MiniJump2dDim = "Comment",
     MiniJump2dSpot = { fg = c.pink, bold = true, nocombine = true },
-    MiniJump2dSpotAhead = { fg = c.hint, bg = c.dark.bg, nocombine = true },
+    MiniJump2dSpotAhead = { fg = c.hint, bg = c.dark_bg, nocombine = true },
     MiniJump2dSpotUnique = { fg = c.orange, bold = true, nocombine = true },
   }
 end

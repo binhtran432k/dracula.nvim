@@ -1,17 +1,17 @@
 local c = require("dracula.colors").setup({ transform = true })
 
 local M = {
-  normal = { bg = c.none, fg = c.dark.fg },
+  normal = { bg = c.none, fg = c.dark_fg },
 
   ellipsis = { fg = c.statusline },
   separator = { fg = c.statusline },
   modified = { fg = c.yellow },
 
   dirname = { fg = c.statusline },
-  basename = { fg = c.dark.fg, bold = true },
-  context = { fg = c.dark.fg },
+  basename = { fg = c.dark_fg, bold = true },
+  context = { fg = c.dark_fg },
 
-  context_file = { fg = c.dark.fg },
+  context_file = { fg = c.dark_fg },
   context_module = { fg = c.yellow },
   context_namespace = { fg = c.yellow },
   context_package = { fg = c.purple },

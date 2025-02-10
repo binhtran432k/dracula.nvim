@@ -26,51 +26,51 @@ function M.get(c, opts)
     ErrorMsg = { fg = c.error }, -- error messages on the command line
     VertSplit = { fg = c.black }, -- the column separating vertically split windows
     WinSeparator = { fg = c.black, bold = true }, -- the column separating vertically split windows
-    Folded = { fg = c.purple, bg = c.gutter.fg }, -- line used for closed folds
+    Folded = { fg = c.purple, bg = c.gutter_fg }, -- line used for closed folds
     FoldColumn = { bg = opts.transparent and c.none or c.bg, fg = c.comment }, -- 'foldcolumn'
-    SignColumn = { bg = opts.transparent and c.none or c.bg, fg = c.gutter.fg }, -- column where |signs| are displayed
-    SignColumnSB = { bg = c.sidebar.bg, fg = c.gutter.fg }, -- column where |signs| are displayed
+    SignColumn = { bg = opts.transparent and c.none or c.bg, fg = c.gutter_fg }, -- column where |signs| are displayed
+    SignColumnSB = { bg = c.sidebar_bg, fg = c.gutter_fg }, -- column where |signs| are displayed
     Substitute = { bg = c.red, fg = c.black }, -- |:substitute| replacement text highlighting
-    LineNr = { fg = c.gutter.fg }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNrAbove = { fg = c.gutter.fg },
-    LineNrBelow = { fg = c.gutter.fg },
+    LineNr = { fg = c.gutter_fg }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNrAbove = { fg = c.gutter_fg },
+    LineNrBelow = { fg = c.gutter_fg },
     CursorLineNr = { fg = c.fg, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     MatchParen = { fg = c.orange, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-    ModeMsg = { fg = c.dark.fg, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
-    MsgArea = { fg = c.dark.fg }, -- Area for messages and cmdline
+    ModeMsg = { fg = c.dark_fg, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
+    MsgArea = { fg = c.dark_fg }, -- Area for messages and cmdline
     -- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = { fg = c.purple }, -- |more-prompt|
-    NonText = { fg = c.gutter.fg }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+    NonText = { fg = c.gutter_fg }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal = { fg = c.fg, bg = opts.transparent and c.none or c.bg }, -- normal text
-    NormalNC = { fg = c.fg, bg = opts.transparent and c.none or opts.dim_inactive and c.dark.bg or c.bg }, -- normal text in non-current windows
-    NormalSB = { fg = c.sidebar.fg, bg = c.sidebar.bg }, -- normal text in sidebar
-    NormalFloat = { fg = c.float.fg, bg = c.float.bg }, -- Normal text in floating windows.
-    FloatBorder = { fg = c.border, bg = c.float.bg },
-    FloatTitle = { fg = c.pink, bg = c.float.bg },
-    Pmenu = { bg = c.popup.bg, fg = c.fg }, -- Popup menu: normal item.
+    NormalNC = { fg = c.fg, bg = opts.transparent and c.none or opts.dim_inactive and c.dark_bg or c.bg }, -- normal text in non-current windows
+    NormalSB = { fg = c.sidebar_fg, bg = c.sidebar_bg }, -- normal text in sidebar
+    NormalFloat = { fg = c.float_fg, bg = c.float_bg }, -- Normal text in floating windows.
+    FloatBorder = { fg = c.border, bg = c.float_bg },
+    FloatTitle = { fg = c.pink, bg = c.float_bg },
+    Pmenu = { bg = c.popup_bg, fg = c.fg }, -- Popup menu: normal item.
     PmenuSel = { bg = c.selection }, -- Popup menu: selected item.
-    PmenuSbar = { bg = util.blend(c.popup.bg, 0.95, c.fg) }, -- Popup menu: scrollbar.
-    PmenuThumb = { bg = c.gutter.fg }, -- Popup menu: Thumb of the scrollbar.
+    PmenuSbar = { bg = util.blend(c.popup_bg, 0.95, c.fg) }, -- Popup menu: scrollbar.
+    PmenuThumb = { bg = c.gutter_fg }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.purple }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search = { bg = c.search, fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search = { bg = c.match, fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { bg = c.orange, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
-    SpecialKey = { fg = c.gutter.fg }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+    SpecialKey = { fg = c.gutter_fg }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad = util.handle_undercurl(opts, { sp = c.error }), -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
     SpellCap = util.handle_undercurl(opts, { sp = c.warning }), -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal = util.handle_undercurl(opts, { sp = c.info }), -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare = util.handle_undercurl(opts, { sp = c.hint }), -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    StatusLine = { fg = c.sidebar.fg, bg = c.statusline }, -- status line of current window
-    StatusLineNC = { fg = c.gutter.fg, bg = c.statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine = { bg = c.statusline, fg = c.gutter.fg }, -- tab pages line, not active tab page label
+    StatusLine = { fg = c.sidebar_fg, bg = c.statusline }, -- status line of current window
+    StatusLineNC = { fg = c.gutter_fg, bg = c.statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    TabLine = { bg = c.statusline, fg = c.gutter_fg }, -- tab pages line, not active tab page label
     TabLineFill = { bg = c.black }, -- tab pages line, where there are no labels
     TabLineSel = { fg = c.black, bg = c.purple }, -- tab pages line, active tab page label
     Title = { fg = c.purple, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
     Visual = { bg = c.visual }, -- Visual mode selection
     VisualNOS = { bg = c.visual }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = { fg = c.warning }, -- warning messages
-    Whitespace = { fg = c.gutter.fg }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace = { fg = c.gutter_fg }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu = { bg = c.visual }, -- current match in 'wildmenu' completion
     WinBar = { link = "StatusLine" }, -- window bar
     WinBarNC = { link = "StatusLineNC" }, -- window bar in inactive windows
@@ -127,7 +127,7 @@ function M.get(c, opts)
     Error = { fg = c.error }, -- (preferred) any erroneous construct
     Todo = { bg = c.yellow, fg = c.bg }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-    qfLineNr = { fg = c.gutter.fg },
+    qfLineNr = { fg = c.gutter_fg },
     qfFileName = { fg = c.purple },
 
     htmlH1 = { fg = c.pink, bold = true },
@@ -149,7 +149,7 @@ function M.get(c, opts)
 
     helpCommand = { bg = c.black, fg = c.purple },
 
-    debugPC = { bg = c.sidebar.bg }, -- used for highlighting the current line in terminal-debug
+    debugPC = { bg = c.sidebar_bg }, -- used for highlighting the current line in terminal-debug
     debugBreakpoint = { bg = util.blend_bg(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
 
     dosIniLabel = { link = "@property" },
@@ -157,15 +157,15 @@ function M.get(c, opts)
     -- These groups are for the native LSP client. Some other LSP clients may
     -- use these groups, or use their own. Consult your LSP client's
     -- documentation.
-    LspReferenceText = { bg = c.gutter.fg }, -- used for highlighting "text" references
-    LspReferenceRead = { bg = c.gutter.fg }, -- used for highlighting "read" references
-    LspReferenceWrite = { bg = c.gutter.fg }, -- used for highlighting "write" references
+    LspReferenceText = { bg = c.gutter_fg }, -- used for highlighting "text" references
+    LspReferenceRead = { bg = c.gutter_fg }, -- used for highlighting "read" references
+    LspReferenceWrite = { bg = c.gutter_fg }, -- used for highlighting "write" references
 
     LspSignatureActiveParameter = { bg = util.blend_bg(c.visual, 0.4), bold = true },
     LspCodeLens = { fg = c.comment },
     LspInlayHint = { fg = util.blend_fg(c.selection, 0.9), italic = true },
 
-    LspInfoBorder = { fg = c.border, bg = c.float.bg },
+    LspInfoBorder = { fg = c.border, bg = c.float_bg },
 
     -- diagnostics
     DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default

@@ -7,7 +7,7 @@ M.url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
 ---@type DraculaHighlightsFn
 function M.get(c)
   return {
-    TreesitterContext = { bg = util.blend_bg(c.gutter.fg, 0.8) },
+    TreesitterContext = { bg = util.blend_bg(c.gutter_fg, 0.8) },
   }
 end
 

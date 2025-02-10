@@ -55,39 +55,35 @@ function M.setup(opts)
   colors.border_header = colors.pink
   colors.border = util.blend_bg(colors.purple, 0.8)
   colors.visual = util.blend_bg(colors.purple, 0.4)
-  colors.search = util.blend(colors.purple, 0.6, "#0000ff")
-  colors.search_alt = util.blend(colors.pink, 0.7, "#ff0000")
+
+  colors.match = util.blend(colors.purple, 0.6, "#0000ff")
+  colors.match_alt = util.blend(colors.pink, 0.7, "#ff0000")
+  colors.match_cmp = util.blend(colors.match, 0.6, colors.cyan)
+
   colors.statusline = colors.black
 
-  colors.dark = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = colors.black,
-  }
-  colors.gutter = {
-    fg = util.blend_fg(colors.selection, 0.95),
-    bg = colors.bg,
-  }
-  colors.sidebar = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = opts.styles.sidebars == "transparent" and colors.none
-      or opts.styles.sidebars == "dark" and colors.dark.bg
-      or colors.bg,
-  }
-  colors.float = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = opts.styles.floats == "transparent" and colors.none
-      or opts.styles.floats == "dark" and colors.dark.bg
-      or colors.bg,
-  }
-  colors.popup = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = colors.dark.bg,
-  }
+  colors.dark_fg = util.blend_bg(colors.fg, 0.8)
+  colors.dark_bg = colors.black
+
+  colors.gutter_fg = util.blend_fg(colors.selection, 0.95)
+  colors.gutter_bg = colors.bg
+
+  colors.sidebar_fg = colors.dark_fg
+  colors.sidebar_bg = opts.styles.sidebars == "transparent" and colors.none
+    or opts.styles.sidebars == "dark" and colors.dark_bg
+    or colors.bg
+
+  colors.float_fg = colors.sidebar_fg
+  colors.float_bg = colors.sidebar_bg
+
+  colors.popup_fg = colors.dark_fg
+  colors.popup_bg = colors.bg
+
   colors.rainbow = { colors.purple, colors.yellow, colors.orange, colors.green, colors.cyan, colors.pink }
 
   if opts.style == "day" then
-    colors.search = util.blend_bg(colors.search, 0.4)
-    colors.search_alt = util.blend_bg(colors.search_alt, 0.4)
+    colors.match = util.blend_bg(colors.match, 0.4)
+    colors.match_alt = util.blend_bg(colors.match_alt, 0.4)
   end
 
   opts.on_colors(colors)

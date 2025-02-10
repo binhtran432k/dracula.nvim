@@ -6,7 +6,7 @@ M.url = "https://github.com/echasnovski/mini.icons"
 function M.get(c)
   return {
     MiniIconsAzure = { fg = c.cyan },
-    MiniIconsBlue = { fg = c.search },
+    MiniIconsBlue = { fg = c.match_cmp },
     MiniIconsCyan = { fg = c.bright_cyan },
     MiniIconsGreen = { fg = c.green },
     MiniIconsGrey = { fg = c.fg },

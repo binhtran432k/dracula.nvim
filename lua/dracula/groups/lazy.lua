@@ -8,7 +8,7 @@ function M.get(c)
     LazyButtonActive = { bg = c.inactive },
     LazyH1 = { bg = c.border_header, fg = c.black },
     LazyProgressDone = { bold = true, fg = c.pink },
-    LazyProgressTodo = { bold = true, fg = c.gutter.fg },
+    LazyProgressTodo = { bold = true, fg = c.gutter_fg },
   }
 end
 

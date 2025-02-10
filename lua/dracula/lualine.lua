@@ -9,7 +9,7 @@ function M.get(style)
   hl.normal = {
     a = { bg = colors.purple, fg = colors.black },
     b = { bg = colors.statusline, fg = colors.purple },
-    c = { bg = colors.statusline, fg = colors.dark.fg },
+    c = { bg = colors.statusline, fg = colors.dark_fg },
   }
 
   hl.insert = {
@@ -39,8 +39,8 @@ function M.get(style)
 
   hl.inactive = {
     a = { bg = colors.statusline, fg = colors.purple },
-    b = { bg = colors.statusline, fg = colors.dark.fg, gui = "bold" },
-    c = { bg = colors.statusline, fg = colors.dark.fg },
+    b = { bg = colors.statusline, fg = colors.dark_fg, gui = "bold" },
+    c = { bg = colors.statusline, fg = colors.dark_fg },
   }
 
   if opts.lualine_bold then

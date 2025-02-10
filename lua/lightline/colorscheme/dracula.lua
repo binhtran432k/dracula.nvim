@@ -29,7 +29,7 @@ dracula.inactive = {
 }
 
 dracula.tabline = {
-	left = { { colors.statusline, colors.gutter.bg }, { colors.statusline, colors.bg } },
+	left = { { colors.statusline, colors.gutter_bg }, { colors.statusline, colors.bg } },
 	middle = { { colors.selection, colors.statusline } },
 	right = { { colors.selection, colors.statusline }, { colors.statusline, colors.bg } },
 	tabsel = { { colors.purple, colors.selection }, { colors.statusline, colors.bg } },
