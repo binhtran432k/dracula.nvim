@@ -15,7 +15,7 @@ function M.get(c)
     BlinkCmpKindTabNine = { fg = c.teal, bg = c.none },
     BlinkCmpLabel = { fg = c.fg, bg = c.none },
     BlinkCmpLabelDeprecated = { fg = c.gutter.fg, bg = c.none, strikethrough = true },
-    BlinkCmpLabelMatch = { fg = c.cyan, bg = c.none },
+    BlinkCmpLabelMatch = { fg = c.match_cmp, bg = c.none },
     BlinkCmpMenu = { fg = c.comment, bg = c.float.bg },
     BlinkCmpMenuBorder = { fg = c.border, bg = c.float.bg },
     BlinkCmpSignatureHelp = { fg = c.fg, bg = c.float.bg },

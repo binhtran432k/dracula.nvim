@@ -53,7 +53,7 @@ function M.get(c, opts)
     PmenuThumb = { bg = c.gutter.fg }, -- Popup menu: Thumb of the scrollbar.
     Question = { fg = c.purple }, -- |hit-enter| prompt and yes/no questions
     QuickFixLine = { bg = c.visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-    Search = { bg = c.search, fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+    Search = { bg = c.match, fg = c.fg }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     IncSearch = { bg = c.orange, fg = c.black }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     CurSearch = { link = "IncSearch" },
     SpecialKey = { fg = c.gutter.fg }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|

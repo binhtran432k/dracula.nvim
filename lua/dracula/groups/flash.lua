@@ -6,7 +6,7 @@ M.url = "https://github.com/folke/flash.nvim"
 function M.get(c)
   return {
     FlashBackdrop = { fg = c.inactive },
-    FlashLabel = { bg = c.search_alt, bold = true, fg = c.fg },
+    FlashLabel = { bg = c.match_alt, bold = true, fg = c.fg },
   }
 end
 

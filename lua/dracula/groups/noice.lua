@@ -12,6 +12,7 @@ function M.get(c)
     NoiceCmdlinePopupTitleInput = { fg = c.yellow },
     NoiceCmdlinePopupTitleLua = { fg = c.cyan },
     NoiceCompletionItemKindDefault = { fg = c.dark.fg, bg = c.none },
+    NoicePopupmenuMatch = { fg = c.match_cmp },
   }
   require("dracula.groups.kinds").kinds(ret, "NoiceCompletionItemKind%s")
   return ret
