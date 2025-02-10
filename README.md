@@ -108,6 +108,8 @@ The [day](#day) style is used when `{ style = "day" }` is passed to
 unless `setup` is explicitly called.
 
 ```lua
+---@module 'dracula'
+---@type DraculaConfig
 require("dracula").setup({
   style = "default", -- The theme comes in three styles, `default`, a darker variant `soft` and `day`
   light_style = "day", -- The theme is used when the background is set to light
@@ -171,6 +173,8 @@ How the highlight groups are calculated:
 ### Settings and color alteration demonstration
 
 ```lua
+---@module 'dracula'
+---@type DraculaConfig
 require("dracula").setup({
   -- use the night style
   style = "soft",
@@ -190,9 +194,11 @@ require("dracula").setup({
 ### [Borderless Telescope](https://github.com/nvim-telescope/telescope.nvim/wiki/Gallery#borderless) example
 
 ```lua
+---@module 'dracula'
+---@type DraculaConfig
 require("dracula").setup({
   on_highlights = function(hl, c)
-    local prompt = c.dark.bg
+    local prompt = c.dark_bg
     hl.TelescopeNormal = {
       bg = c.bg,
       fg = c.fg,

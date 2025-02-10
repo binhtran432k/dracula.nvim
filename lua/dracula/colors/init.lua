@@ -62,30 +62,23 @@ function M.setup(opts)
 
   colors.statusline = colors.black
 
-  colors.dark = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = colors.black,
-  }
-  colors.gutter = {
-    fg = util.blend_fg(colors.selection, 0.95),
-    bg = colors.bg,
-  }
-  colors.sidebar = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = opts.styles.sidebars == "transparent" and colors.none
-      or opts.styles.sidebars == "dark" and colors.dark.bg
-      or colors.bg,
-  }
-  colors.float = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = opts.styles.floats == "transparent" and colors.none
-      or opts.styles.floats == "dark" and colors.dark.bg
-      or colors.bg,
-  }
-  colors.popup = {
-    fg = util.blend_bg(colors.fg, 0.8),
-    bg = colors.dark.bg,
-  }
+  colors.dark_fg = util.blend_bg(colors.fg, 0.8)
+  colors.dark_bg = colors.black
+
+  colors.gutter_fg = util.blend_fg(colors.selection, 0.95)
+  colors.gutter_bg = colors.bg
+
+  colors.sidebar_fg = colors.dark_fg
+  colors.sidebar_bg = opts.styles.sidebars == "transparent" and colors.none
+    or opts.styles.sidebars == "dark" and colors.dark_bg
+    or colors.bg
+
+  colors.float_fg = colors.sidebar_fg
+  colors.float_bg = colors.sidebar_bg
+
+  colors.popup_fg = colors.dark_fg
+  colors.popup_bg = colors.bg
+
   colors.rainbow = { colors.purple, colors.yellow, colors.orange, colors.green, colors.cyan, colors.pink }
 
   if opts.style == "day" then

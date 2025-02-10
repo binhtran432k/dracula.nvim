@@ -5,9 +5,9 @@ M.url = "https://github.com/echasnovski/mini.statusline"
 ---@type DraculaHighlightsFn
 function M.get(c)
   return {
-    MiniStatuslineDevinfo = { fg = c.dark.fg, bg = c.gutter.bg },
-    MiniStatuslineFileinfo = { fg = c.dark.fg, bg = c.gutter.bg },
-    MiniStatuslineFilename = { fg = c.dark.fg, bg = c.selection },
+    MiniStatuslineDevinfo = { fg = c.dark_fg, bg = c.gutter_bg },
+    MiniStatuslineFileinfo = { fg = c.dark_fg, bg = c.gutter_bg },
+    MiniStatuslineFilename = { fg = c.dark_fg, bg = c.selection },
     MiniStatuslineInactive = { fg = c.purple, bg = c.statusline },
     MiniStatuslineModeCommand = { fg = c.black, bg = c.yellow, bold = true },
     MiniStatuslineModeInsert = { fg = c.black, bg = c.green, bold = true },

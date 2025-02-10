@@ -10,7 +10,7 @@ function M.get(c)
     DiagnosticInformation = "DiagnosticInfo",
     DiagnosticWarning = "DiagnosticWarn",
     LspFloatWinBorder = { fg = c.border },
-    LspFloatWinNormal = { bg = c.float.bg },
+    LspFloatWinNormal = { bg = c.float_bg },
     LspSagaBorderTitle = { fg = c.pink },
     LspSagaCodeActionBorder = { fg = c.border },
     LspSagaCodeActionContent = { fg = c.pink },

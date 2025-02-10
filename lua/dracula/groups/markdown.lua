@@ -8,7 +8,7 @@ M.url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
 function M.get(c)
   local ret = {
     RenderMarkdownBullet = { fg = c.orange }, -- horizontal rule
-    RenderMarkdownCode = { bg = c.dark.bg },
+    RenderMarkdownCode = { bg = c.dark_bg },
     RenderMarkdownDash = { fg = c.orange }, -- horizontal rule
     RenderMarkdownTableHead = { fg = c.red },
     RenderMarkdownTableRow = { fg = c.orange },
