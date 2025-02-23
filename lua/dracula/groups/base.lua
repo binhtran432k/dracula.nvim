@@ -108,7 +108,7 @@ function M.get(c, opts)
     Type = { fg = c.cyan }, -- (preferred) int, long, char, etc.
     StorageClass = { link = "Keyword" }, -- static, register, volatile, etc.
     Structure = { link = "Keyword" }, --  struct, union, enum, etc.
-    Typedef = { link = "Keyword" }, --  A typedef
+    Typedef = { link = "Type" }, --  A typedef
 
     Special = { fg = c.purple, italic = true }, -- (preferred) any special symbol
     SpecialChar = { fg = c.bright_blue, italic = true }, --  special character in a constant
